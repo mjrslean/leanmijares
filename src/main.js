@@ -2,5 +2,8 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import MasonryWall from '@yeger/vue-masonry-wall'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+app.use(MasonryWall).mount('#app')
