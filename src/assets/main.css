@@ -7,7 +7,7 @@
 }
 
 html {
-  @apply scroll-smooth bg-[#0b0f1a];
+  @apply bg-[#0b0f1a];
 }
 
 @layer utilities {
@@ -17,27 +17,27 @@ html {
   }
 
   .text-2xl-3xl {
-    /* 20px → 30px */
-    font-size: clamp(1.5rem, 0.9138rem + 0.3448vw, 1.875rem);
+    /* 24px → 30px */
+    font-size: clamp(1.5rem, 1.4583rem + 1.3021vw, 1.875rem);
   }
-
   .text-xl-2xl {
-    /* 18px → 20px */
-    font-size: clamp(1.25rem, 0.9138rem + 0.3448vw, 1.5rem);
+    /* 20px → 24px */
+    font-size: clamp(1.25rem, 1.0417rem + 0.651vw, 1.5rem);
   }
-
   .text-base-xl {
-    /* 16px → 18px */
-    font-size: clamp(1rem, 0.9138rem + 0.3448vw, 1.25rem);
+    /* 16px → 20px */
+    font-size: clamp(1rem, 0.7917rem + 0.651vw, 1.25rem);
   }
-
+  .text-base-lg {
+    /* 16px → 18px */
+    font-size: clamp(1rem, 0.8958rem + 0.3255vw, 1.125rem);
+  }
   .text-sm-base {
     /* 14px → 16px */
-    font-size: clamp(0.875rem, 0.6638rem + 0.3448vw, 1rem);
+    font-size: clamp(0.875rem, 0.7708rem + 0.3255vw, 1rem);
   }
-
   .text-xs-sm {
     /* 12px → 14px */
-    font-size: clamp(0.75rem, 0.6638rem + 0.3448vw, 0.875rem);
+    font-size: clamp(0.75rem, 0.6458rem + 0.3255vw, 0.875rem);
   }
 }
