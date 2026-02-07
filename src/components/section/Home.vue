@@ -1,56 +1,63 @@
 <script setup>
-import { Mail, Github, Linkedin, Download } from 'lucide-vue-next'
-import { Experience } from '@/components/section'
+import Button from '../ui/button/Button.vue'
+import About from './About.vue'
+
+const downloadCV = () => {
+  window.open(
+    'https://drive.usercontent.google.com/u/0/uc?id=1pH2HLmwJYCsOThdcnioppH-JJ3uBaNth&export=download',
+    '_blank',
+  )
+}
+
+const socialMediaLinks = [
+  { icon: 'tabler:brand-facebook', url: 'https://www.facebook.com/lean.schooldays/' },
+  { icon: 'tabler:brand-github', url: 'https://github.com/mjrslean' },
+  { icon: 'tabler:brand-linkedin', url: 'https://www.linkedin.com/in/lean-elizebette-mijares/' },
+  { icon: 'tabler:mail', url: 'mailto:mijareslean@gmail.com' },
+]
 </script>
 
 <template>
-  <div class="mx-auto my-12 flex flex-col gap-6 px-6 tracking-wide md:flex-row lg:container">
-    <img class="ring-golden-yellow size-28 rounded-full ring-2" src="/images/Avatar.png" />
+  <div class="mx-auto flex flex-col gap-12 px-6 tracking-wide md:flex-row lg:container">
+    <div class="relative flex flex-col items-start gap-12">
+      <div class="relative size-40">
+        <div
+          class="absolute inset-0 rounded-full bg-gradient-to-r from-gray-400 to-orange-500 opacity-30 blur-2xl"
+        />
+        <img
+          src="/images/Avatar.png"
+          class="border-golden-yellow relative z-10 h-full w-full rounded-full border-2 shadow-2xl"
+          alt="Profile avatar"
+        />
+      </div>
+      <Button @click="downloadCV()" class="bg-golden-yellow hover:bg-golden-yellow/80 text-white">
+        <Icon icon="line-md:cloud-alt-download-loop" class="size-4" />
+        <span class="text-sm font-bold">Download CV</span>
+      </Button>
+    </div>
 
     <div class="flex flex-col space-y-10">
-      <!--Social Platform Section-->
-      <div class="flex flex-col">
-        <h1 class="text-xl-2xl font-bold">Hi, I'm Lean</h1>
-        <p class="text-sm-base text-sub-text font-semibold">Software Engineer</p>
+      <!--Social Platform-->
+      <div class="flex flex-col space-y-2">
+        <div class="leading-8">
+          <h1 class="text-3xl-4xl font-bold">
+            Hi, I'm <span class="text-golden-yellow">Lean</span>
+          </h1>
+          <p class="text-sm-base text-sub-text font-semibold">Software Engineer</p>
+        </div>
 
-        <div class="text-sub-text mt-4 flex items-center gap-4">
-          <a href="mailto:mijareslean@gmail.com">
-            <Mail class="size-5 hover:text-white/90" />
-          </a>
-          <a href="https://github.com/mjrslean" target="_blank">
-            <Github class="size-5 hover:text-white/90" />
-          </a>
-          <a href="https://www.linkedin.com/in/lean-elizebette-mijares/" target="_blank">
-            <Linkedin class="size-5 hover:text-white/90" />
+        <div class="text-sub-text flex items-center gap-4">
+          <a v-for="link in socialMediaLinks" :key="link.icon" :href="link.url" target="_blank">
+            <Icon
+              :icon="link.icon"
+              class="hover:text-golden-yellow size-6 transition-transform duration-300 hover:rotate-12"
+            />
           </a>
         </div>
       </div>
 
-      <div class="text-sm-base space-y-8 leading-6 tracking-wide">
-        <p>
-          I'm a software engineer who enjoys building web applications. I work mostly with a modern
-          stack like
-          <label>
-            <span class="text-golden-yellow font-semibold">Vue</span>,
-            <span class="text-golden-yellow font-semibold">Laravel</span>, and
-            <span class="text-golden-yellow font-semibold">Tailwind</span>,
-          </label>
-          but more than anything, I just love creating things that work well and look good. Outside
-          of coding, I like to keep a beginner’s mindset — always open to new ideas, feedback, and
-          inspiration wherever it comes from.
-        </p>
-
-        <!-- Experience Section -->
-        <Experience />
-
-        <!-- Resume -->
-        <a
-          href="https://drive.google.com/file/d/1pH2HLmwJYCsOThdcnioppH-JJ3uBaNth/view?usp=sharing"
-          class="bg-golden-yellow inline-flex items-center gap-2 rounded-lg px-6 py-3 font-bold whitespace-nowrap"
-        >
-          Download my CV
-          <Download class="size-5" />
-        </a>
+      <div class="text-sm-base space-y-8 tracking-wide">
+        <About />
       </div>
     </div>
   </div>

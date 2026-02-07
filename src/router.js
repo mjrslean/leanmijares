@@ -1,22 +1,28 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { Contact, Home, Projects, Skills } from './components/section'
+import App from './App.vue'
 
-const routes = [
-  { path: '/', name: 'home', component: Home },
-  { path: '/skills', name: 'skills', component: Skills },
-  { path: '/projects', name: 'projects', component: Projects },
-  { path: '/contact', name: 'contact', component: Contact },
-]
+const routes = [{ path: '/:section?', component: App }]
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
   scrollBehavior(to) {
-    return {
-      el: document.getElementById(to.name),
-      behavior: 'smooth',
-      top: 70,
-    }
+    const section = to.params.section || 'home'
+
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        const element = document.getElementById(section)
+        if (element) {
+          resolve({
+            el: `#${section}`,
+            behavior: 'smooth',
+            top: 90,
+          })
+        } else {
+          resolve({ top: 0, behavior: 'smooth' })
+        }
+      }, 100)
+    })
   },
 })
 

@@ -4,9 +4,6 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import MasonryWall from '@yeger/vue-masonry-wall'
+import { Icon } from '@iconify/vue'
 
-const app = createApp(App)
-
-app.use(router)
-    .use(MasonryWall)
-    .mount('#app')
+createApp(App).use(router).use(MasonryWall).component('Icon', Icon).mount('#app')
