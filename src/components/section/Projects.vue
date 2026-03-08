@@ -12,8 +12,21 @@ const projects = [
       { name: 'Laravel', icon: '/images/logo/laravel.svg' },
       { name: 'Vue', icon: '/images/logo/vue.svg' },
       { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
+      { name: 'Python', icon: '/images/logo/vite.svg' },
     ],
     link: 'https://tp-demo.ibms-iot.com/en/login',
+    status: 'Completed',
+  },
+  {
+    title: 'Portfolio Website',
+    description: 'A personal portfolio website showcasing my projects, skills, and experience.',
+    image: '/images/projects/portfolio.png',
+    techStack: [
+      { name: 'Vue', icon: '/images/logo/vue.svg' },
+      { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
+      { name: 'Python', icon: '/images/logo/vite.svg' },
+    ],
+    link: 'https://leanmijares.vercel.app',
     status: 'Completed',
   },
   {
@@ -24,7 +37,6 @@ const projects = [
     techStack: [
       { name: 'C++', icon: '/images/logo/cpp.svg' },
       { name: 'Arduino', icon: '/images/logo/arduino.svg' },
-      { name: 'Twilio', icon: '/images/logo/twilio.svg' },
     ],
     github: 'https://github.com/mjrslean/Three-Way-Security',
     status: 'Completed',
@@ -36,10 +48,10 @@ const projects = [
     image: '/images/projects/smart-home.png',
     techStack: [
       { name: 'React Native', icon: '/images/logo/react-native.svg' },
+      { name: 'Python', icon: '/images/logo/python.svg' },
       { name: 'Firebase', icon: '/images/logo/firebase.svg' },
       { name: 'Arduino', icon: '/images/logo/arduino.svg' },
       { name: 'Raspberry Pi', icon: '/images/logo/raspberry-pi.svg' },
-      { name: 'Python', icon: '/images/logo/python.svg' },
     ],
     github: 'https://github.com/mjrslean/Smart-Space-Hardware',
     status: 'Completed',
