@@ -56,7 +56,7 @@ const socialMediaLinks = [
         </div>
       </div>
 
-      <div class="text-sm-base space-y-8 tracking-wide">
+      <div id="about" class="text-sm-base scroll-mt-24 space-y-8 tracking-wide">
         <About />
       </div>
     </div>

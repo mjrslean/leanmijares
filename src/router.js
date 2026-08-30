@@ -7,7 +7,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to) {
-    const section = to.params.section || 'home'
+    const section = to.params.section || 'about'
 
     return new Promise((resolve) => {
       setTimeout(() => {

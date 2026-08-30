@@ -13,6 +13,10 @@ const skills = [
     image: 'js',
   },
   {
+    title: 'Typescript',
+    image: 'typescript',
+  },
+  {
     title: 'React Native',
     image: 'react-native',
   },
@@ -99,11 +103,14 @@ const skills = [
   <div class="mx-auto px-6 lg:container">
     <div class="mb-12 space-y-2">
       <h1 class="text-2xl-3xl text-golden-yellow font-bold">Skills & Technologies</h1>
-      <p class="text-base-xl text-muted-foreground max-w-3xl">Technologies I am experienced with</p>
+      <p class="text-base-xl text-muted-foreground max-w-3xl">
+        Tools and technologies I use to design, build, and ship full-stack applications.
+      </p>
     </div>
 
     <div class="flex justify-center">
       <div
+        v-reveal
         class="xs:grid-cols-[repeat(auto-fit,minmax(80px,90px))] grid w-full max-w-4xl grid-cols-[repeat(auto-fit,minmax(80px,1fr))] justify-center justify-items-center gap-6 px-12 sm:grid-cols-[repeat(4,minmax(80px,1fr))] sm:gap-10 md:grid-cols-[repeat(5,minmax(100px,1fr))] lg:grid-cols-[repeat(6,minmax(100px,1fr))]"
       >
         <div v-for="skill in skills" :key="skill.title" class="group relative w-full max-w-[120px]">

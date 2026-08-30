@@ -29,8 +29,9 @@ const contactInfo = [
     <!-- Contact Cards -->
     <div class="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-24">
       <div
-        v-for="info in contactInfo"
+        v-for="(info, i) in contactInfo"
         :key="info.title"
+        v-reveal="{ delay: i * 100 }"
         class="group hover:shadow-golden-yellow/10 relative overflow-hidden rounded-2xl border border-white/10 bg-gray-800/30 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/5"
       >
         <!-- Icon -->

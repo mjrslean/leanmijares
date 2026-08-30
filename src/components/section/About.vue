@@ -92,9 +92,9 @@ const educations = ref([
     I'm a software engineer who enjoys building web applications. I work mostly with a modern stack
     like
     <label>
-      <span class="text-golden-yellow font-semibold">Vue</span>,
-      <span class="text-golden-yellow font-semibold">Laravel</span>, and
-      <span class="text-golden-yellow font-semibold">Tailwind</span>,
+      <span class="text-golden-yellow font-semibold">Laravel</span>,
+      <span class="text-golden-yellow font-semibold">Vue Js</span>, and
+      <span class="text-golden-yellow font-semibold">MySQL</span>,
     </label>
     but more than anything, I just love creating things that work well and look good. Outside of
     coding, I like to keep a beginner’s mindset — always open to new ideas, feedback, and
@@ -115,8 +115,8 @@ const educations = ref([
       </TabsList>
 
       <TabsContent value="experience" class="mt-6 space-y-6">
-        <template v-for="experience in experiences" :key="experience.company">
-          <Card class="gap-4 overflow-hidden">
+        <template v-for="(experience, i) in experiences" :key="experience.company">
+          <Card v-reveal="{ delay: i * 100 }" class="gap-4 overflow-hidden">
             <CardHeader>
               <!-- Company Name -->
               <div class="mb-4 flex items-start justify-between gap-4">
@@ -184,8 +184,8 @@ const educations = ref([
         </template>
       </TabsContent>
       <TabsContent value="education" class="mt-6 space-y-6">
-        <template v-for="education in educations" :key="education.school">
-          <Card class="overflow-hidden">
+        <template v-for="(education, i) in educations" :key="education.school">
+          <Card v-reveal="{ delay: i * 100 }" class="overflow-hidden">
             <CardHeader>
               <div class="flex items-start justify-between gap-4">
                 <h3 class="text-foreground text-base-lg font-semibold">{{ education.school }}</h3>

@@ -4,8 +4,8 @@ import { ref } from 'vue'
 const isOpen = ref(false)
 
 const navLinks = [
-  { to: '/home', label: 'Home' },
-  { to: '/skills', label: 'About' },
+  { to: '/about', label: 'About' },
+  { to: '/skills', label: 'Skills' },
   { to: '/projects', label: 'Projects' },
   { to: '/contact', label: 'Contact' },
 ]

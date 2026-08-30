@@ -12,7 +12,7 @@ const projects = [
       { name: 'Laravel', icon: '/images/logo/laravel.svg' },
       { name: 'Vue', icon: '/images/logo/vue.svg' },
       { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
-      { name: 'Python', icon: '/images/logo/vite.svg' },
+      { name: 'Vite', icon: '/images/logo/vite.svg' },
     ],
     link: 'https://tp-demo.ibms-iot.com/en/login',
     status: 'Completed',
@@ -24,7 +24,7 @@ const projects = [
     techStack: [
       { name: 'Vue', icon: '/images/logo/vue.svg' },
       { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
-      { name: 'Python', icon: '/images/logo/vite.svg' },
+      { name: 'Vite', icon: '/images/logo/vite.svg' },
     ],
     link: 'https://leanmijares.vercel.app',
     status: 'Completed',
@@ -64,13 +64,14 @@ const projects = [
     <div class="mb-12 space-y-2">
       <h1 class="text-golden-yellow text-2xl-3xl font-bold">Projects</h1>
       <p class="text-base-xl max-w-3xl text-gray-400">
-        A showcase of projects demonstrating my development skills.
+        A selection of web, mobile, and embedded projects I've built and shipped.
       </p>
     </div>
 
     <masonry-wall :items="projects" :ssr-columns="1" :column-width="320" :gap="24">
       <template #default="{ item }">
         <div
+          v-reveal
           class="group relative overflow-hidden rounded-xl bg-gray-800/30 backdrop-blur-sm transition-all duration-300 hover:bg-gray-800/50"
         >
           <!-- Image with overlay -->
