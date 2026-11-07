@@ -1,50 +1,40 @@
 <script setup>
 import { Icon } from '@iconify/vue'
 import { Badge } from '@/components/ui/badge'
-import { computed, ref } from 'vue'
 
 const projects = [
   {
+    title: 'TPI Homepage',
+    description:
+      'The official corporate website of TPI, showcasing the company’s services and work.',
+    image: '/images/projects/company-homepage.png',
+    techStack: [
+      { name: 'Laravel', icon: '/images/logo/laravel.svg' },
+      { name: 'Vue', icon: '/images/logo/vue.svg' },
+      { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
+      { name: 'GCP', icon: '/images/logo/gcp.svg' },
+    ],
+    link: 'https://tenseiph.com',
+    status: 'Completed',
+  },
+  {
     title: 'iBMS Demosite',
-    description: 'A quick walkthrough of iBMS highlighting key features and interface.',
+    description:
+      'A quick walkthrough of iBMS that highlights its key features, main dashboard, controls, and user-friendly interface.',
     image: '/images/projects/demo-site.png',
     techStack: [
       { name: 'Laravel', icon: '/images/logo/laravel.svg' },
       { name: 'Vue', icon: '/images/logo/vue.svg' },
       { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
-      { name: 'Vite', icon: '/images/logo/vite.svg' },
+      { name: 'GCP', icon: '/images/logo/gcp.svg' },
     ],
     link: 'https://tp-demo.ibms-iot.com/en/login',
     status: 'Completed',
   },
   {
-    title: 'Portfolio Website',
-    description: 'A personal portfolio website showcasing my projects, skills, and experience.',
-    image: '/images/projects/portfolio.png',
-    techStack: [
-      { name: 'Vue', icon: '/images/logo/vue.svg' },
-      { name: 'Tailwind', icon: '/images/logo/tailwind.svg' },
-      { name: 'Vite', icon: '/images/logo/vite.svg' },
-    ],
-    link: 'https://leanmijares.vercel.app',
-    status: 'Completed',
-  },
-  {
-    title: 'RFID, Fingerprint, And Keypad Based Door Lock With Alert System',
-    description:
-      'Home security system that sends instant SMS alerts to homeowners upon detecting intruders.',
-    image: '/images/projects/three-way-security.png',
-    techStack: [
-      { name: 'C++', icon: '/images/logo/cpp.svg' },
-      { name: 'Arduino', icon: '/images/logo/arduino.svg' },
-    ],
-    github: 'https://github.com/mjrslean/Three-Way-Security',
-    status: 'Completed',
-  },
-  {
     title: 'Smart-Home Automation and Environment Monitoring',
     description:
-      'An Android-based home automation app designed to remotely control specific devices and monitor environmental conditions within the home and its surroundings.',
+      'An Android-based home automation app to remotely control specific devices and monitor environmental conditions within the home and its surroundings.',
     image: '/images/projects/smart-home.png',
     techStack: [
       { name: 'React Native', icon: '/images/logo/react-native.svg' },
@@ -56,11 +46,23 @@ const projects = [
     github: 'https://github.com/mjrslean/Smart-Space-Hardware',
     status: 'Completed',
   },
+  {
+    title: 'RFID, Fingerprint, And Keypad Based Door Lock With Alert System',
+    description:
+      'A three-way home security system that sends instant SMS alerts to homeowners upon detecting intruders.',
+    image: '/images/projects/three-way-security.png',
+    techStack: [
+      { name: 'C++', icon: '/images/logo/cpp.svg' },
+      { name: 'Arduino', icon: '/images/logo/arduino.svg' },
+    ],
+    github: 'https://github.com/mjrslean/Three-Way-Security',
+    status: 'Completed',
+  },
 ]
 </script>
 
 <template>
-  <div class="mx-auto px-6 lg:container">
+  <div class="mx-auto px-8 sm:px-16 lg:px-24 xl:container">
     <div class="mb-12 space-y-2">
       <h1 class="text-golden-yellow text-2xl-3xl font-bold">Projects</h1>
       <p class="text-base-xl max-w-3xl text-gray-400">
@@ -68,7 +70,7 @@ const projects = [
       </p>
     </div>
 
-    <masonry-wall :items="projects" :ssr-columns="1" :column-width="320" :gap="24">
+    <masonry-wall :items="projects" :ssr-columns="1" :column-width="320" :gap="20">
       <template #default="{ item }">
         <div
           v-reveal
@@ -79,7 +81,7 @@ const projects = [
             <img
               :src="item.image"
               :alt="item.title"
-              class="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+              class="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div
               class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60"
@@ -121,7 +123,7 @@ const projects = [
           <div class="space-y-4 p-5">
             <div>
               <h2 class="text-lg font-bold text-white">{{ item.title }}</h2>
-              <p class="text-sm leading-relaxed text-gray-400">{{ item.description }}</p>
+              <p class="mt-2 text-sm leading-relaxed text-gray-400">{{ item.description }}</p>
             </div>
 
             <!-- Tech Stack -->
@@ -129,11 +131,11 @@ const projects = [
               <p class="mb-3 text-xs font-semibold tracking-wider text-gray-500 uppercase">
                 Tech Stack
               </p>
-              <div class="flex flex-wrap gap-3">
+              <div class="flex flex-wrap gap-2">
                 <div
                   v-for="(tech, i) in item.techStack"
                   :key="i"
-                  class="group/tech relative flex size-10 items-center justify-center rounded-lg bg-gray-700/50 p-2 transition-all duration-300 hover:bg-gray-600/50"
+                  class="group/tech relative flex size-9 items-center justify-center rounded-lg bg-gray-700/50 p-2 transition-all duration-300 hover:bg-gray-600/50"
                   :title="tech.name"
                 >
                   <img :src="tech.icon" :alt="tech.name" class="size-full object-contain" />

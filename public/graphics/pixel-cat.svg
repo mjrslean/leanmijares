@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 16" shape-rendering="crispEdges" xmlns:c2pa="http://c2pa.org/manifest">
+  <style>
+    @keyframes step-a {
+      0%   { transform: translate(1px, 0); }
+      25%  { transform: translate(0, 0); }
+      50%  { transform: translate(-1px, -1px); }
+      75%  { transform: translate(0, -1px); }
+    }
+    @keyframes step-b {
+      0%   { transform: translate(-1px, -1px); }
+      25%  { transform: translate(0, -1px); }
+      50%  { transform: translate(1px, 0); }
+      75%  { transform: translate(0, 0); }
+    }
+    @keyframes bob {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-1px); }
+    }
+    @keyframes tail-sway {
+      0%, 100% { transform: rotate(-8deg); }
+      50%      { transform: rotate(8deg); }
+    }
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95%           { transform: scaleY(0.1); }
+    }
+    .leg-a { animation: step-a 0.8s steps(1, end) infinite; }
+    .leg-b { animation: step-b 0.8s steps(1, end) infinite; }
+    .bob   { animation: bob 0.4s steps(1, end) infinite; }
+    .tail  { animation: tail-sway 1.4s ease-in-out infinite;
+             transform-box: fill-box; transform-origin: bottom right; }
+    .eyes  { animation: blink 4s infinite;
+             transform-box: fill-box; transform-origin: center; }
+  </style>
+  
+  <!-- tail -->
+  <g class="tail">
+    <path d="M4 10 H2 V4" fill="none" stroke="#F2A065" stroke-width="2" />
+    <rect x="1" y="3" width="2" height="1" fill="#FFF1DC" />
+  </g>
+
+  <!-- fixed underbelly: fills the gap under the body when it bobs up -->
+  <rect x="4" y="12" width="9" height="1" fill="#F2A065" />
+
+  <!-- legs: start at y=12 so they tuck under the body and never detach -->
+  <g class="leg-a">
+    <rect x="4"  y="12" width="2" height="3" fill="#F2A065" />
+    <rect x="10" y="12" width="2" height="3" fill="#F2A065" />
+    <rect x="4"  y="15" width="2" height="1" fill="#FFF1DC" />
+    <rect x="10" y="15" width="2" height="1" fill="#FFF1DC" />
+  </g>
+  <g class="leg-b">
+    <rect x="6"  y="12" width="2" height="3" fill="#F2A065" />
+    <rect x="12" y="12" width="2" height="3" fill="#F2A065" />
+    <rect x="6"  y="15" width="2" height="1" fill="#FFF1DC" />
+    <rect x="12" y="15" width="2" height="1" fill="#FFF1DC" />
+  </g>
+
+  <!-- body -->
+  <g class="bob">
+    <rect x="3" y="8" width="11" height="5" fill="#F2A065" />
+    <rect x="5" y="12" width="7" height="1" fill="#FFF1DC" />
+    <!-- stripes -->
+    <rect x="4" y="8" width="1" height="2" fill="#D9773A" />
+    <rect x="6" y="8" width="1" height="3" fill="#D9773A" />
+  </g>
+
+  <!-- head (pulled back 2px so it sits over the front of the body) -->
+  <g class="bob">
+    <!-- ears -->
+    <rect x="8"  y="2" width="3" height="2" fill="#F2A065" />
+    <rect x="8"  y="1" width="2" height="1" fill="#F2A065" />
+    <rect x="16" y="2" width="3" height="2" fill="#F2A065" />
+    <rect x="17" y="1" width="2" height="1" fill="#F2A065" />
+    <rect x="9"  y="2" width="1" height="1" fill="#F7A8B8" />
+    <rect x="17" y="2" width="1" height="1" fill="#F7A8B8" />
+
+    <!-- head shape -->
+    <path d="M9 3 H18 V4 H19 V10 H18 V11 H9 V10 H8 V4 H9 Z" fill="#F2A065" />
+
+    <!-- forehead stripes -->
+    <rect x="11" y="3" width="1" height="1" fill="#D9773A" />
+    <rect x="13" y="3" width="1" height="2" fill="#D9773A" />
+    <rect x="15" y="3" width="1" height="1" fill="#D9773A" />
+
+    <!-- cream muzzle -->
+    <rect x="11" y="8" width="5" height="3" fill="#FFF1DC" />
+    <rect x="10" y="9" width="1" height="1" fill="#FFF1DC" />
+    <rect x="16" y="9" width="1" height="1" fill="#FFF1DC" />
+
+    <!-- big sparkly eyes -->
+    <g class="eyes">
+      <rect x="9"  y="5" width="2" height="3" fill="#2B1B17" />
+      <rect x="16" y="5" width="2" height="3" fill="#2B1B17" />
+      <rect x="9"  y="5" width="1" height="1" fill="#FFFFFF" />
+      <rect x="16" y="5" width="1" height="1" fill="#FFFFFF" />
+      <rect x="10" y="7" width="1" height="1" fill="#6B5A9E" />
+      <rect x="17" y="7" width="1" height="1" fill="#6B5A9E" />
+    </g>
+
+    <!-- nose + smile -->
+    <rect x="13" y="8"  width="1" height="1" fill="#E0707F" />
+    <rect x="12" y="9"  width="1" height="1" fill="#2B1B17" />
+    <rect x="14" y="9"  width="1" height="1" fill="#2B1B17" />
+    <rect x="13" y="10" width="1" height="1" fill="#2B1B17" />
+
+    <!-- rosy cheeks -->
+    <rect x="8"  y="8" width="2" height="1" fill="#F7A8B8" />
+    <rect x="17" y="8" width="2" height="1" fill="#F7A8B8" />
+
+    <!-- whiskers -->
+    <g fill="#8A5A44" opacity="0.6">
+      <rect x="6"  y="8"  width="2" height="1" />
+      <rect x="6"  y="10" width="2" height="1" />
+      <rect x="19" y="8"  width="2" height="1" />
+      <rect x="19" y="10" width="2" height="1" />
+    </g>
+  </g>
+</svg>

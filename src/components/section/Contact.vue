@@ -1,59 +1,68 @@
 <script setup>
-// import { MapPinned, Mail } from 'lucide-vue-next'
+const email = 'mijareslean@gmail.com'
+const emailLink = `mailto:${email}?subject=${encodeURIComponent("Let's work together")}`
 
-const contactInfo = [
-  { icon: 'lucide:map', title: 'My Location', text: 'Quezon City, Metro Manila' },
-  { icon: 'lucide:mail', title: 'Email Address', text: 'mijareslean@gmail.com' },
-]
+const openTo = ['Full-time roles', 'Freelance projects', 'Collaborations']
 </script>
+
 <template>
-  <div class="mx-auto px-6 lg:container">
-    <div>
-      <h1 class="text-2xl-3xl font-bold">
-        Get In
-        <span class="group relative ml-1 inline-block">
-          <span
-            class="relative z-10 cursor-pointer transition-colors duration-300 group-hover:text-white"
-            >Touch</span
-          >
-          <span
-            class="bg-golden-yellow absolute bottom-0 left-0 z-0 h-1 w-full rounded-full transition-all duration-300 group-hover:h-full"
-          ></span>
-        </span>
-      </h1>
-      <p class="text-base-xl mt-3 text-white/70 md:text-lg">
-        Feel free to reach out for collaborations, opportunities, or just to say hello!
-      </p>
-    </div>
-
-    <!-- Contact Cards -->
-    <div class="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-24">
+  <div class="mx-auto px-8 sm:px-16 lg:px-24 xl:container">
+    <div class="mx-auto max-w-2xl text-center">
+      <!-- Get in touch badge -->
       <div
-        v-for="(info, i) in contactInfo"
-        :key="info.title"
-        v-reveal="{ delay: i * 100 }"
-        class="group hover:shadow-golden-yellow/10 relative overflow-hidden rounded-2xl border border-white/10 bg-gray-800/30 p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/5"
+        v-reveal="{ delay: 0 }"
+        class="border-golden-yellow/30 bg-golden-yellow/10 text-golden-yellow inline-flex items-center gap-2 rounded-full border px-4 py-1.5 text-xs font-semibold tracking-wider uppercase"
       >
-        <!-- Icon -->
-        <div
-          class="bg-golden-yellow/10 group-hover:bg-golden-yellow/20 mb-6 inline-flex rounded-full p-4 transition-all duration-300 group-hover:scale-110"
-        >
-          <Icon
-            :icon="info.icon"
-            class="text-golden-yellow size-6 transition-transform duration-300 group-hover:rotate-12"
+        <span class="relative flex size-2">
+          <span
+            class="bg-golden-yellow absolute inline-flex h-full w-full rounded-full opacity-75 motion-safe:animate-ping"
           />
-        </div>
+          <span class="bg-golden-yellow relative inline-flex size-2 rounded-full" />
+        </span>
+        Get in touch
+      </div>
 
-        <!-- Content -->
-        <div class="space-y-2">
-          <h3 class="text-base-lg font-semibold text-white">
-            {{ info.title }}
-          </h3>
-          <p
-            class="text-sm-base text-white/60 transition-colors duration-300 group-hover:text-white/80"
+      <h1 v-reveal="{ delay: 80 }" class="text-2xl-3xl mt-6 leading-tight font-bold">
+        Let's build something
+        <span class="text-golden-yellow">great</span> together
+      </h1>
+
+      <p v-reveal="{ delay: 160 }" class="text-base-xl mt-4 text-white/70">
+        Have a project in mind, a role to fill, or just want to say hello? I'm always happy to
+        connect. Send a message and I'll get back to you as soon as I can.
+      </p>
+
+      <div v-reveal="{ delay: 240 }" class="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <a
+          :href="emailLink"
+          class="bg-golden-yellow text-primary-foreground hover:bg-golden-yellow/90 inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 hover:scale-105"
+        >
+          <Icon icon="tabler:mail" class="size-4" />
+          Send an email
+        </a>
+        <a
+          :href="linkedinLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-full border border-white/4 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-white/8 hover:bg-white/10"
+        >
+          <Icon icon="tabler:brand-linkedin" class="size-4" />
+          Connect on LinkedIn
+        </a>
+      </div>
+
+      <div v-reveal="{ delay: 320 }" class="mt-10">
+        <p class="text-sm font-semibold tracking-wider text-white/40 uppercase">
+          Currently open to
+        </p>
+        <div class="mt-3 flex flex-wrap justify-center gap-2">
+          <span
+            v-for="item in openTo"
+            :key="item"
+            class="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-white/70"
           >
-            {{ info.text }}
-          </p>
+            {{ item }}
+          </span>
         </div>
       </div>
     </div>

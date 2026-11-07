@@ -4,10 +4,15 @@ const currentYear = new Date().getFullYear()
 
 <template>
   <footer class="bg-[#1a2339] py-6">
-    <div class="text-xs-sm mx-auto px-6 text-center text-white/50 lg:container">
+    <div
+      class="text-xs-sm mx-auto flex flex-col items-center justify-between gap-2 px-6 text-center text-white/50 sm:flex-row sm:text-left lg:container"
+    >
       <p>
-        © {{ currentYear }} All rights reserved • Made with
-        <span class="text-golden-yellow font-semibold">Vue.js</span> &
+        © {{ currentYear }} <span class="text-golden-yellow font-semibold">Lean Mijares</span>. All
+        rights reserved.
+      </p>
+      <p class="sm:text-right">
+        Built with <span class="text-golden-yellow font-semibold">Vue.js</span> &
         <span class="text-golden-yellow font-semibold">Tailwind CSS</span>
       </p>
     </div>
